@@ -12,9 +12,13 @@ import { MiaTableModule } from '@agencycoda/mia-table';
 import { MiaFormModule } from '@agencycoda/mia-form';
 import { MiaLoadingModule } from '@agencycoda/mia-loading';
 
+import { MatButtonModule } from '@angular/material/button';
+import { ClientsTableComponent } from './components/clients-table/clients-table.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ClientsTableComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +31,11 @@ import { MiaLoadingModule } from '@agencycoda/mia-loading';
     MiaTableModule,
     MiaLoadingModule,
     MiaFormModule,
+    MatButtonModule
   ],
   providers: [
-    { 
-      provide: MIA_AUTH_PROVIDER, 
+    {
+      provide: MIA_AUTH_PROVIDER,
       useValue: {
         baseUrl: environment.baseUrl
       }

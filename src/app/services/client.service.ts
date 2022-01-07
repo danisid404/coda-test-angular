@@ -9,11 +9,13 @@ import { environment } from 'src/environments/environment';
 })
 export class ClientService extends MiaBaseCrudHttpService<Client> {
 
-  constructor(
-    protected http: HttpClient
-  ) {
+  constructor(protected http: HttpClient) {
     super(http);
     this.basePathUrl = environment.baseUrl + 'client';
   }
- 
+
+  deleteClient(client: Client) {
+    return this.deleteOb(this.basePathUrl + '/remove/' + client.id);
+  }
+
 }
